@@ -1,6 +1,6 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
-import Image from "next/image";
+
 
 const projects = [
   {
@@ -17,6 +17,7 @@ const projects = [
     description: "Analytics and management platform for social media accounts with real-time data visualization.",
     screenshotText: "Project Screenshot",
     technologies: ["vuejs", "python", "docker"],
+    screenshotUrl: "/AimerAppLogin.png",
     liveUrl: "#",
     codeUrl: "#",
   },
@@ -25,6 +26,7 @@ const projects = [
     description: "Real-time weather forecasting with location-based services.",
     screenshotText: "Project Screenshot",
     technologies: ["js", "html5", "css3-alt"],
+    screenshotUrl: "/AimerAppLogin.png",
     liveUrl: "#",
     codeUrl: "#",
   },

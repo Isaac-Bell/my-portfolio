@@ -6,7 +6,7 @@ const AboutMe: React.FC = () => {
   return (
     <section
       id="about-me"
-      className="min-h-screen py-20 bg-neutral-900 text-neutral-100"
+      className=" min-h-screen pb-30 bg-neutral-900 flex  items-center text-neutral-100"
     >
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex flex-col md:flex-row gap-12 items-center">
@@ -78,8 +78,8 @@ const AboutMe: React.FC = () => {
                     date: "2024",
                   },
                   {
-                    title: "Project Manager - Tech University",
-                    date: "2016 - 2020",
+                    title: "Construction Professional - New Zealandyy",
+                    date: "2016 - 2023",
                   },
                 ].map((highlight, index) => (
                   <div key={index} className="flex gap-4 items-start">

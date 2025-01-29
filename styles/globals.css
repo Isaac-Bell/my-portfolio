@@ -10,3 +10,27 @@ body {
   background-color: #0d1117; /* Dark background */
   color: #c9d1d9; /* Light text */
 }
+
+html _{
+  scroll-behavior: smooth;
+}
+
+.section-transition {
+  position: relative;
+}
+
+.section-transition::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10vh; /* Adjust for smoother blend */
+  background: linear-gradient(to bottom, transparent, var(--tw-bg-opacity) #000);
+  z-index: 10;
+}
+
+.scroll-container {
+  scroll-snap-stop: always;
+  scroll-behavior: smooth;
+  transition: scroll-behavior 1s ease-in-out;
+}

@@ -9,7 +9,9 @@ const Skills: React.FC = () => {
       skills: [
         { name: "HTML/CSS", level: 90 },
         { name: "JavaScript", level: 85 },
-        { name: "React", level: 80 },
+        { name: "React", level: 85 },
+   
+        { name: "NextJS", level: 65 },
       ],
     },
     {
@@ -17,7 +19,7 @@ const Skills: React.FC = () => {
       icon: "fa-server",
       skills: [
         { name: "Node.js", level: 85 },
-        { name: "Python", level: 75 },
+        { name: "Express", level: 75 },
         { name: "SQL", level: 80 },
       ],
     },
@@ -27,7 +29,7 @@ const Skills: React.FC = () => {
       skills: [
         { name: "Git", level: 90 },
         { name: "Docker", level: 70 },
-        { name: "AWS", level: 75 },
+        { name: "Bootstrap", level: 75 },
       ],
     },
     {
@@ -42,7 +44,7 @@ const Skills: React.FC = () => {
   ];
 
   return (
-    <div id="skills-section" className="min-h-screen bg-neutral-50 py-16">
+    <div id="skills-section" className="min-h-screen  flex flex-col justify-center bg-neutral-50 pb-40">
       <div className="container mx-auto px-4">
         <div className="flex justify-end mb-8">
           <button

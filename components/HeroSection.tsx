@@ -13,7 +13,7 @@ const HeroSection: React.FC = () => {
       {/* Main Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white tracking-tight">
-          Hi, I'm Neon. I Build Scalable, User-Friendly Applications.
+          Hi, I'm Isaac Moses Bell. <br></br> I Build Scalable, User-Friendly Applications.
         </h1>
         <p className="text-xl md:text-2xl text-neutral-300 mb-12 tracking-wide">
           Developer | Innovator | Problem-Solver
