@@ -1,0 +1,38 @@
+.matrix-column {
+  display: flex;
+  flex-direction: column;
+  animation: scroll-down 15s linear infinite; /* Smooth falling effect */
+}
+
+.matrix-symbol {
+  font-family: monospace;
+  font-size: 14px; /* Adjust font size for tighter spacing */
+  color: #00ff00; /* Classic Matrix green */
+  animation: fade-in 1.5s ease-in-out infinite alternate;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for rainbow colors */
+/* .matrix-symbol:hover {
+  color: hsl(calc(360 * var(--hue, 1)), 100%, 50%);
+} */
+
+/* Smooth scroll-down effect */
+@keyframes scroll-down {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(1000%);
+  }
+}
+
+/* Fade-in animation for symbols */
+@keyframes fade-in {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
