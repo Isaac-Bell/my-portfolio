@@ -8,7 +8,7 @@ const projects = [
     description: "A full-stack pasture management solution with real-time inventory management and AI grazing plan generation.",
     screenshotText: "Project Screenshot",
     screenshotUrl: "/AimerAppLogin.png",
-    technologies: ["react", "node-js", "aws"],
+    technologies: ["react", "node-js", "type-script", "docker"  ],
     liveUrl: "#",
     codeUrl: "#",
   },

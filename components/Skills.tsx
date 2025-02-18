@@ -20,7 +20,7 @@ const Skills: React.FC = () => {
       skills: [
         { name: "Node.js", level: 85 },
         { name: "Express", level: 75 },
-        { name: "SQL", level: 80 },
+        { name: "SQL", level: 40 },
       ],
     },
     {
@@ -36,7 +36,7 @@ const Skills: React.FC = () => {
       title: "Soft Skills",
       icon: "fa-users",
       skills: [
-        { name: "Communication", level: 95 },
+        { name: "Communication", level: 85 },
         { name: "Team Work", level: 90 },
         { name: "Problem Solving", level: 85 },
       ],
