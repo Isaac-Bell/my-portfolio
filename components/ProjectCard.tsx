@@ -33,7 +33,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           />
         ) : (
           <Image
-            src={screenshotUrl}
+            src={screenshotUrl || '/default-image.png'}
             alt={screenshotText}
             height={100}
             width={700}

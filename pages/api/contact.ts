@@ -23,7 +23,7 @@ export default async function handler(
 
     // 1️⃣ Save message to the database
     const savedMessage = await prisma.message.create({
-      data: { name, email, message },
+      data: { name, email, content: message },
     })
 
     console.log('✅ Message saved to DB:', savedMessage)

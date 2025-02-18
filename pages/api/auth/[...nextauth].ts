@@ -1,11 +1,11 @@
-import NextAuth from 'next-auth'
+import NextAuth, { NextAuthOptions, User, Account, Session } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
 import { PrismaAdapter } from '@auth/prisma-adapter'
 import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
-export const authOptions = {
+export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
     GoogleProvider({
@@ -14,21 +14,20 @@ export const authOptions = {
     }),
   ],
   callbacks: {
-    async session({ session, user }) {
-      // Attach user ID and email to the session
+    async session({ session, user }: { session: Session; user: User }) {
       if (session.user) {
         session.user.id = user.id
-        session.user.email = user.email
+        session.user.email = user.email ?? ''
       }
       return session
     },
-    async signIn({ user, account }) {
+    async signIn({ user, account }: { user: User; account: Account | null }) {
       console.log('🔍 Debugging signIn Callback:', { user, account })
 
       if (!account) return false
 
       const existingUser = await prisma.user.findUnique({
-        where: { email: user.email },
+        where: { email: user.email! },
         include: { accounts: true },
       })
 
@@ -46,13 +45,20 @@ export const authOptions = {
         // Create a new user if they don't exist
         await prisma.user.create({
           data: {
-            email: user.email,
+            email: user.email!,
             name: user.name,
             image: user.image,
             accounts: {
               create: {
                 provider: account.provider,
                 providerAccountId: account.providerAccountId,
+                type: account.type,
+                access_token: account.access_token,
+                expires_at: account.expires_at,
+                id_token: account.id_token,
+                refresh_token: account.refresh_token,
+                scope: account.scope,
+                token_type: account.token_type,
               },
             },
           },

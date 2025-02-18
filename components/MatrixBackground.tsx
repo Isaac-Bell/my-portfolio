@@ -34,10 +34,10 @@ const MatrixBackground: React.FC = () => {
       maxSpeed4 = 50
 
     // Define update rates
-    const frameCount1 = 0,
+    let frameCount1 = 0,
       frameCount2 = 0,
-      frameCount3 = 0,
-      frameCount4 = 0
+      frameCount3 = 0
+    const frameCount4 = 0
     const updateRate1 = 1 // Fastest (updates every frame)
     const updateRate2 = 5 // Updates every 5 frames
     const updateRate3 = 6 // Updates every 10 frames

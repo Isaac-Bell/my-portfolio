@@ -22,6 +22,8 @@ const AdminDashboard = () => {
 
   const _messages = messages
 
+  console.log(_messages)
+
   useEffect(() => {
     fetchMessages()
   }, [])
@@ -31,28 +33,29 @@ const AdminDashboard = () => {
     setMessages(data)
   }
 
-  const deleteMessage = async (id: string) => {
-    await axios.delete(`/api/messages/${id}`)
-    fetchMessages()
-  }
+  // const deleteMessage = async (id: string) => {
+  //   await axios.delete(`/api/messages/${id}`)
+  //   fetchMessages()
+  // }
 
-  const replyToMessage = async (
-    id: string,
-    email: string,
-    replyText: string
-  ) => {
-    await axios.post(`/api/messages/reply`, { id, email, replyText })
-    fetchMessages()
-  }
+  // const replyToMessage = async (
+  //   id: string,
+  //   email: string,
+  //   replyText: string
+  // ) => {
+  //   await axios.post(`/api/messages/reply`, { id, email, replyText })
+  //   fetchMessages()
+  // }
 
   const { data: session, status } = useSession()
   const router = useRouter()
 
   useEffect(() => {
+    console.log(session)
     if (status === 'unauthenticated') {
       router.push('/login')
     }
-  }, [status, router])
+  }, [status, router, session])
 
   if (status === 'loading') {
     return <p>Loading...</p>
