@@ -1,8 +1,8 @@
-import { signIn, signOut, useSession } from "next-auth/react";
-import { FaGoogle } from "react-icons/fa";
+import { signIn, signOut, useSession } from 'next-auth/react'
+import { FaGoogle } from 'react-icons/fa'
 
 export default function Login() {
-  const { data: session } = useSession();
+  const { data: session } = useSession()
 
   return (
     <div className="flex items-center justify-center h-screen bg-gray-900 text-white">
@@ -29,7 +29,7 @@ export default function Login() {
           ) : (
             <>
               <button
-                onClick={() => signIn("google")}
+                onClick={() => signIn('google', { callbackUrl: '/admin' })}
                 className="w-full flex items-center justify-center space-x-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition-all duration-200 shadow-md hover:shadow-blue-500/50"
               >
                 <FaGoogle className="text-xl" />
@@ -40,5 +40,5 @@ export default function Login() {
         </div>
       </div>
     </div>
-  );
+  )
 }

@@ -1,13 +1,13 @@
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import { motion } from 'framer-motion'
-import Navbar from '../components/Navbar'
+
 import HeroSection from '../components/HeroSection'
 import AboutMe from '../components/AboutMe'
 import Projects from '../components/Projects'
 import Skills from '../components/Skills'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
-import MatrixBackground from '@/components/MatrixBackground'
+
 import CareerJourneyTimeline from '@/components/CareerJourneyTimeline'
 
 const sectionVariants = {
@@ -82,6 +82,7 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <Contact />
+            <Footer />
           </motion.section>
         </motion.div>
       </div>
