@@ -32,9 +32,9 @@ export const authOptions: NextAuthOptions = {
       })
 
       if (existingUser) {
-        // ✅ Explicitly define type for acc to avoid implicit 'any' error
+        // ✅ Explicitly define type for `acc` to avoid TypeScript errors
         const linkedAccount = existingUser.accounts.some(
-          (acc) => (acc as Account).provider === account.provider
+          (acc: Account) => acc.provider === account.provider
         )
 
         if (!linkedAccount) {
