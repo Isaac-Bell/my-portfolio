@@ -1,5 +1,5 @@
-import React from "react";
-import isaac from "../public/isaac.jpg"
+import React from 'react'
+import isaac from '../public/isaac.jpg'
 import Image from 'next/image'
 
 const AboutMe: React.FC = () => {
@@ -15,7 +15,12 @@ const AboutMe: React.FC = () => {
             <div className="bg-neutral-800 rounded-2xl overflow-hidden aspect-square flex items-center justify-center shadow-lg">
               <span className="text-neutral-500 text-lg">
                 {/* Replace this placeholder with an actual photo */}
-               <Image src="/isaac.jpg" width={500} height={500} alt="Picture of the Author" />
+                <Image
+                  src="/isaac.jpg"
+                  width={400}
+                  height={400}
+                  alt="Picture of the Author"
+                />
               </span>
             </div>
           </div>
@@ -28,10 +33,10 @@ const AboutMe: React.FC = () => {
               <p className="text-neutral-300 leading-relaxed">
                 I'm a passionate full-stack developer with 1+ years of
                 experience crafting web applications. My journey in tech started
-                with a hands on intensive Full Stack Web Development bootcamp, and I've since worked with
-                various startups and enterprise companies. I specialize in
-                building scalable solutions and enjoy tackling complex problems
-                with elegant solutions.
+                with a hands on intensive Full Stack Web Development bootcamp,
+                and I've since worked with various startups and enterprise
+                companies. I specialize in building scalable solutions and enjoy
+                tackling complex problems with elegant solutions.
               </p>
             </div>
 
@@ -42,10 +47,10 @@ const AboutMe: React.FC = () => {
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[
-                  { name: "React", icon: "fa-react" },
-                  { name: "Node.js", icon: "fa-node-js" },
-                  { name: "Python", icon: "fa-python" },
-                  { name: "SQL", icon: "fa-database" },
+                  { name: 'React', icon: 'fa-react' },
+                  { name: 'Node.js', icon: 'fa-node-js' },
+                  { name: 'Python', icon: 'fa-python' },
+                  { name: 'SQL', icon: 'fa-database' },
                 ].map((skill, index) => (
                   <div
                     key={index}
@@ -70,16 +75,16 @@ const AboutMe: React.FC = () => {
               <div className="space-y-4">
                 {[
                   {
-                    title: "Internship: Software Developer - Aimer Development",
-                    date: "2024 - Present",
+                    title: 'Internship: Software Developer - Aimer Development',
+                    date: '2024 - Present',
                   },
                   {
-                    title: "Full Stack Developer - Dev Academy Aotearoa",
-                    date: "2024",
+                    title: 'Full Stack Developer - Dev Academy Aotearoa',
+                    date: '2024',
                   },
                   {
-                    title: "Construction Professional - New Zealandyy",
-                    date: "2016 - 2023",
+                    title: 'Construction Professional - New Zealandyy',
+                    date: '2016 - 2023',
                   },
                 ].map((highlight, index) => (
                   <div key={index} className="flex gap-4 items-start">
@@ -88,7 +93,9 @@ const AboutMe: React.FC = () => {
                       <h4 className="font-medium text-neutral-200">
                         {highlight.title}
                       </h4>
-                      <p className="text-sm text-neutral-400">{highlight.date}</p>
+                      <p className="text-sm text-neutral-400">
+                        {highlight.date}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -98,7 +105,7 @@ const AboutMe: React.FC = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default AboutMe;
+export default AboutMe
