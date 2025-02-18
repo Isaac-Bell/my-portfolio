@@ -18,8 +18,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   screenshotUrl,
   technologies,
   videoUrl,
-  liveUrl,
-  codeUrl,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   return (

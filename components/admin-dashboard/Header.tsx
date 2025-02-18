@@ -1,3 +1,4 @@
+import Image from 'next/image'
 const Header = () => {
   return (
     <header className="bg-gray-800 border-b border-gray-700 p-4 flex justify-between items-center">
@@ -13,14 +14,14 @@ const Header = () => {
         <button className="text-gray-300 hover:text-cyan-400">
           <i className="fa-solid fa-bell text-xl"></i>
         </button>
-        <img
+        <Image
           src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg"
           alt="Profile"
           className="w-8 h-8 rounded-full"
         />
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

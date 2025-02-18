@@ -52,12 +52,14 @@ export default async function handler(
     return res
       .status(200)
       .json({ message: 'Message sent and saved successfully!' })
-  } catch (error: any) {
-    console.error('❌ Error processing contact form:', error)
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error('❌ Error processing contact form:', error)
 
-    return res.status(500).json({
-      message: 'Internal Server Error',
-      error: error.message || error,
-    })
+      return res.status(500).json({
+        message: 'Internal Server Error',
+        error: error.message || error,
+      })
+    }
   }
 }

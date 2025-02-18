@@ -14,39 +14,13 @@ export const authOptions = {
     }),
   ],
   callbacks: {
-    async jwt({ token, user, account }) {
-      if (account) {
-        // Store OAuth token details when user logs in
-        token.accessToken = account.access_token
-        token.idToken = account.id_token
-        token.provider = account.provider
+    async session({ session, user }) {
+      // Attach user ID and email to the session
+      if (session.user) {
+        session.user.id = user.id
+        session.user.email = user.email
       }
-
-      if (user) {
-        token.id = user.id
-        token.email = user.email
-        token.name = user.name
-        token.image = user.image
-      }
-
-      return token
-    },
-    async session({ session, token }) {
-      // Ensure session includes the token values
-      session.user.id = token.id
-      session.user.email = token.email
-      session.user.name = token.name
-      session.user.image = token.image
-      session.accessToken = token.accessToken
-      session.idToken = token.idToken
-
       return session
-    },
-    async redirect({ url, baseUrl }) {
-      // Allow only relative URLs
-      if (url.startsWith('/')) return `${baseUrl}${url}`
-      if (new URL(url).origin === baseUrl) return url
-      return baseUrl
     },
     async signIn({ user, account }) {
       console.log('🔍 Debugging signIn Callback:', { user, account })
@@ -59,17 +33,17 @@ export const authOptions = {
       })
 
       if (existingUser) {
-        // Ensure user is using the correct provider
+        // If user exists but used a different provider, prevent sign-in
         const linkedAccount = existingUser.accounts.some(
           (acc) => acc.provider === account.provider
         )
 
         if (!linkedAccount) {
           console.error('⚠️ OAuth Account Not Linked')
-          throw new Error('OAuthAccountNotLinked')
+          return false
         }
       } else {
-        // Create new user & link account if they don't exist
+        // Create a new user if they don't exist
         await prisma.user.create({
           data: {
             email: user.email,
@@ -79,9 +53,6 @@ export const authOptions = {
               create: {
                 provider: account.provider,
                 providerAccountId: account.providerAccountId,
-                access_token: account.access_token,
-                id_token: account.id_token,
-                expires_at: account.expires_at,
               },
             },
           },
@@ -91,7 +62,7 @@ export const authOptions = {
       return true
     },
   },
-  session: { strategy: 'jwt' }, // Using JWT session storage
+  session: { strategy: 'database' },
   secret: process.env.NEXTAUTH_SECRET,
 }
 

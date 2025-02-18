@@ -1,5 +1,5 @@
 import React from 'react'
-import isaac from '../public/isaac.jpg'
+
 import Image from 'next/image'
 
 const AboutMe: React.FC = () => {
@@ -31,10 +31,10 @@ const AboutMe: React.FC = () => {
             <div className="space-y-4">
               <h2 className="text-3xl font-bold text-primary">About Me</h2>
               <p className="text-neutral-300 leading-relaxed">
-                I'm a passionate full-stack developer with 1+ years of
+                I&lsquo;m a passionate full-stack developer with 1+ years of
                 experience crafting web applications. My journey in tech started
                 with a hands on intensive Full Stack Web Development bootcamp,
-                and I've since worked with various startups and enterprise
+                and I&lsquo;ve since worked with various startups and enterprise
                 companies. I specialize in building scalable solutions and enjoy
                 tackling complex problems with elegant solutions.
               </p>
