@@ -49,6 +49,8 @@ model Message {
   id        String   @id @default(uuid())
   name      String
   email     String
+  replied   Boolean?
+  replyText String?
   content   String   @map("message") // ✅ If DB column is still "message", map it
   createdAt DateTime @default(now())
   userId    String? // ✅ Add relation field

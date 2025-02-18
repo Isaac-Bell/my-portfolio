@@ -32,8 +32,10 @@ export const authOptions: NextAuthOptions = {
       })
 
       if (existingUser) {
-        // ✅ Explicitly define type for `acc` to avoid TypeScript errors
-        const linkedAccount = existingUser.accounts.some(
+        // ✅ Explicitly cast `accounts` to an array of `Account`
+        const accounts = existingUser.accounts as Account[]
+
+        const linkedAccount = accounts.some(
           (acc: Account) => acc.provider === account.provider
         )
 
