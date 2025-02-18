@@ -32,9 +32,9 @@ export const authOptions: NextAuthOptions = {
       })
 
       if (existingUser) {
-        // If user exists but used a different provider, prevent sign-in
+        // ✅ Explicitly define type for acc to avoid implicit 'any' error
         const linkedAccount = existingUser.accounts.some(
-          (acc) => acc.provider === account.provider
+          (acc) => (acc as Account).provider === account.provider
         )
 
         if (!linkedAccount) {
