@@ -83,8 +83,8 @@ const AboutMe: React.FC = () => {
                     date: '2024',
                   },
                   {
-                    title: 'Construction Professional - New Zealandyy',
-                    date: '2016 - 2023',
+                    title: 'Construction Professional - New Zealandy',
+                    date: '2013 - Present',
                   },
                 ].map((highlight, index) => (
                   <div key={index} className="flex gap-4 items-start">
