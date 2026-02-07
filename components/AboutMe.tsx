@@ -83,7 +83,7 @@ const AboutMe: React.FC = () => {
                     date: '2024',
                   },
                   {
-                    title: 'Construction Professional - New Zealandy',
+                    title: 'Construction Professional - New Zealand',
                     date: '2013 - Present',
                   },
                 ].map((highlight, index) => (
